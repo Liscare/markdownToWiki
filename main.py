@@ -1,6 +1,8 @@
 import wikiFetcher
+import mdLinker
 
 if __name__ == '__main__':
     wikiFetcher = wikiFetcher.WikiFetcher()
-    print(wikiFetcher.fetch_from_json("words.json"))
+    urls = wikiFetcher.fetch_from_json("words.json")
+    mdLinker.replace_links("test/example.md", urls)
 
