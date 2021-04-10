@@ -15,6 +15,20 @@ def replace_links(file_name, links):
         file.write(content)
 
 
+def replace_in_md(file_content, words_links):
+    """
+    Replace '[myWord]()' by '[myWord](wikiLink)' when myWord exists into words_links parameter
+    :param file_content: Content of your markdown file
+    :param words_links: Dict of each word and it link (example: {myWord: wikiLink})
+    :return: File content with links
+    """
+    result = file_content
+    for word, link in words_links.items():
+        result = result.replace(f'[{word}]()', generate_link(word, link))
+    print(result)
+    return result
+
+
 def generate_link(word, link):
     """
     Return a str like a markdown link

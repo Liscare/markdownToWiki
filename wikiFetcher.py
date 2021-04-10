@@ -1,5 +1,8 @@
 import json
 import requests
+import re
+
+import mdLinker
 
 
 class WikiFetcher:
@@ -54,3 +57,25 @@ class WikiFetcher:
             for word in words_json["words"]:
                 result.update(self.fetch(word))
         return result
+
+    def fetch_from_md(self, file_name):
+        """
+        Insert Wikipedia link for each markdown link empty (without link).
+
+        Example:
+            The string "I live in [France]()." will be replaced by
+            "I live in [France](https://en.wikipedia.org/wiki/France).".
+        :param file_name: Name of your markdown file
+        :return: None
+        """
+
+        with open(file_name, 'r') as file:
+            content = file.read()
+        words = re.findall(r'\[(.*)]\(\)', content)
+        words_links = dict()
+        for word in words:
+            words_links.update(self.fetch(word))
+        with open(file_name, 'w') as file_w:
+            file_w.write(mdLinker.replace_in_md(content, words_links))
+
+
