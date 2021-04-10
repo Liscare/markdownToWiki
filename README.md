@@ -19,7 +19,7 @@ You also need a file (in this example named `yourFile.md`) where you want to rep
     import wikiFetcher
 
     if __name__ == '__main__':
-        urls = wikiFetcher.WikiFetcher().fetch_from_json("yourWords.json")
+        urls = wikiFetcher.fetch_from_json("yourWords.json")
         mdLinker.replace_links("yourFile.md", urls)
 
 ### JSON file
@@ -42,7 +42,7 @@ You also need a file (in this example named `yourFile.md`) where you want to rep
     import wikiFetcher
 
     if __name__ == '__main__':
-        wikiFetcher.WikiFetcher().fetch_from_md("yourFile.md")
+        wikiFetcher.fetch_from_md("yourFile.md")
 
 
 
