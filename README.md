@@ -26,13 +26,25 @@ You also need a file (in this example named `yourFile.md`) where you want to rep
 Your JSON file should be formatted like:
 
     {
-      "words": [
-        "yourWord1",
-        "yourWord2",
-        "yourWord3",
-        "yourWord4"
+      "wikiwords":
+      [
+        {
+          "words": [
+            "Kerala",
+            "unpalatability",
+            "python"
+          ]
+        },
+        {
+          "language_code": "fr",
+          "words": [
+            "Grèce"
+          ]
+        }
       ]
     }
+
+`language_code` is optional (`en` by default).
 
 ## Replace empty link in a markdown file
 
