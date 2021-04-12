@@ -4,17 +4,6 @@ import re
 
 import mdLinker
 
-"""
-This is a class for finding Wikipedia pages from words/expressions
-
-Attributes:
-    language_code (str):
-        Language code for search. See https://api.wikimedia.org/wiki/Special:SiteMatrix for all possibilities
-        English (en) by default
-    email_address (str):
-        Your email address for User-Agent in request header
-"""
-language_code = 'en'
 number_of_results = 1
 email_address = "name@domain.com"
 headers = {
