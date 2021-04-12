@@ -36,7 +36,10 @@ Your JSON file should be formatted like:
           ]
         },
         {
-          "language_code": "fr",
+          "language": {
+            "indicator": true,
+            "code": "fr"
+          },
           "words": [
             "Grèce"
           ]
@@ -44,7 +47,15 @@ Your JSON file should be formatted like:
       ]
     }
 
-`language_code` is optional (`en` by default).
+`indicator` (`false` by default) and `code` (`en` by default) are optionals.
+
+#### Meaning
+
+- `wikiwords`: All your data
+- `words`: List of words that you want to fetch its Wikipedia page
+- `indicator`: (optional) If you want to display the language near the word like "[Python [FR]](https://fr.wikipedia.org/wiki/Python_(langage))". `False` by default
+- `code`: (optional) Language code for the Wikipedia URL. See the column "Wiki" in the [list of Wikipedias](https://wikistats.wmcloud.org/display.php?t=wp). `en` (English) by default
+
 
 ## Replace empty link in a markdown file
 

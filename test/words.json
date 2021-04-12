@@ -9,7 +9,10 @@
       ]
     },
     {
-      "language_code": "fr",
+      "language": {
+        "indicator": true,
+        "code": "fr"
+      },
       "words": [
         "Grèce"
       ]
