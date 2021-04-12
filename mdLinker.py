@@ -25,7 +25,6 @@ def replace_in_md(file_content, words_links):
     result = file_content
     for word, link in words_links.items():
         result = result.replace(f'[{word}]()', generate_link(word, link))
-    print(result)
     return result
 
 
