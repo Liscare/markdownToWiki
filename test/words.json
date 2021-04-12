@@ -1,8 +1,18 @@
 {
-  "words": [
-    "Kerala",
-    "grecque",
-    "unpalatability",
-    "philosophe"
+  "wikiwords":
+  [
+    {
+      "words": [
+        "Kerala",
+        "unpalatability",
+        "python"
+      ]
+    },
+    {
+      "language_code": "fr",
+      "words": [
+        "Grèce"
+      ]
+    }
   ]
 }

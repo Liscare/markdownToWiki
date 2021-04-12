@@ -5,27 +5,30 @@ import re
 import mdLinker
 
 number_of_results = 1
-email_address = "name@domain.com"
+default_language_code = 'en'  # English
+user_agent = "MarkdownToWiki (name@domain.com)"
 headers = {
-    'User-Agent': email_address
+    'User-Agent': user_agent
 }
 base_url = 'https://api.wikimedia.org/core/v1/wikipedia/'
 endpoint = '/search/page'
-url = base_url + language_code + endpoint
 
 
-def fetch(search_query):
+def fetch(search_query, language_code='en'):
     """"
     Fetch one or more Wikipedia page (as a link) from a word or an expression
 
+        :param language_code: Language code, English by default. (See https://wikistats.wmcloud.org/display.php?t=wp)
         :param search_query: Word or expression to find its matching Wikipedia page
         :return: A dict with the word as key and the link as value
     """
 
+    url = base_url + language_code + endpoint
     parameters = {'q': search_query, 'limit': number_of_results}
     response = requests.get(url, headers=headers, params=parameters)
     article_url = 'https://' + language_code + '.wikipedia.org/wiki/'
     if response.status_code == 200:
+        print(response.text)
         response_json = json.loads(response.text)
         if len(response_json['pages']) == 1:
             article_url += response_json['pages'][0]['key']
@@ -43,8 +46,10 @@ def fetch_from_json(file_name):
     with open(file_name) as words:
         words_json = json.load(words)
         result = dict()
-        for word in words_json["words"]:
-            result.update(fetch(word))
+        for wikiWord in words_json["wikiwords"]:
+            language_code = wikiWord.get('language_code', default_language_code)
+            for word in wikiWord["words"]:
+                result.update(fetch(word, language_code))
     return result
 
 
