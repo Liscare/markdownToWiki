@@ -69,7 +69,7 @@ def fetch_from_md(file_name):
 
     with open(file_name, 'r') as file:
         content = file.read()
-    words = re.findall(r'\[(.*)]\(\)', content)
+    words = re.findall(r'\[(\w+)]\(\)', content)
     words_links = dict()
     for word in words:
         words_links.update(fetch(word))
