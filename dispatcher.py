@@ -1,6 +1,5 @@
 import argparse
 import constant
-import wikiFetcher
 
 
 def init_args():
@@ -27,8 +26,6 @@ def init_wiki(args):
     Initialize a WikiFetcher object according to arguments
 
     :param args: Argument object from command line
-    :return: An initialized WikiFetcher object
+    :return: A dictionary of all arguments for WikiFetcher
     """
-    kargs = {"lang": args.lang[0]}
-    wiki_fetcher = wikiFetcher.WikiFetcher(**kargs)
-    return wiki_fetcher
+    return {"lang": args.lang[0]}
