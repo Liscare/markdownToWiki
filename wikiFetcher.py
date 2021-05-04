@@ -20,7 +20,7 @@ def fetch(search_query, indicator=False, code=constant.DEFAULT_LANGUAGE):
     api_url = f'https://api.wikimedia.org/core/v1/wikipedia/{code}/search/page'
     article_url = f'https://{code}.wikipedia.org/wiki/'
     parameters = {'q': search_query, 'limit': 1}
-    headers = {'User-Agent': "MarkdownToWiki (name@domain.com)"}
+    headers = {'User-Agent': constant.DEFAULT_USER_AGENT}
     response = requests.get(api_url, headers=headers, params=parameters)
 
     if response.status_code == 200:
