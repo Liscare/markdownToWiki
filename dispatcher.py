@@ -17,6 +17,10 @@ def init_args():
                         help="Default language for each Wikipedia query. See "
                              "https://wikistats.wmcloud.org/display.php?t=wp in the column named Wiki",
                         default=[constant.DEFAULT_LANGUAGE])
+    parser.add_argument("-n", "--number-response", nargs=1, type=int, dest="nb_resp", metavar="Number of response",
+                        help="Number of response from Wikipedia for each request. If n > 1, you will choose"
+                             "between n proposals in CLI",
+                        default=[constant.DEFAULT_LIMIT])
     args = parser.parse_args()
     return args
 
@@ -28,4 +32,4 @@ def init_wiki(args):
     :param args: Argument object from command line
     :return: A dictionary of all arguments for WikiFetcher
     """
-    return {"lang": args.lang[0]}
+    return {"lang": args.lang[0], "limit": args.nb_resp[0]}

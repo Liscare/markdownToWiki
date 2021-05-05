@@ -36,31 +36,14 @@ def fetch(search_query, indicator=False, code=constant.DEFAULT_LANGUAGE, limit=c
     return {name: article_url}
 
 
-def fetch_from_json(file_name):
-    """
-    Fetch Wikipedia page from a word or an expression into a JSON file
-
-        :param file_name: File name of a JSON file containing words
-        :return: A dict with each word as key with its complete link as value
-    """
-
-    with open(file_name) as words:
-        words_json = json.load(words)
-        result = dict()
-        for wikiWord in words_json["wikiwords"]:
-            language_options = wikiWord.get('language', {})
-            for word in wikiWord["words"]:
-                result.update(fetch(word, **language_options))
-    return result
-
-
-def fetch_from_md(file_name, lang=constant.DEFAULT_LANGUAGE):
+def fetch_from_md(file_name, lang=constant.DEFAULT_LANGUAGE, limit=constant.DEFAULT_LIMIT):
     """
     Insert Wikipedia link for each markdown link empty (without link).
 
     Example:
         The string "I live in [France]()." will be replaced by
         "I live in [France](https://en.wikipedia.org/wiki/France).".
+    :param limit: Number of response from Wikipedia for each search
     :param lang: Language code
     :param file_name: Name of your markdown file
     :return: None
@@ -71,6 +54,6 @@ def fetch_from_md(file_name, lang=constant.DEFAULT_LANGUAGE):
     words = re.findall(r'\[(\w+)]\(\)', content)
     words_links = dict()
     for word in words:
-        words_links.update(fetch(word, code=lang))
+        words_links.update(fetch(word, code=lang, limit=limit))
     with open(file_name, 'w') as file_w:
         file_w.write(mdLinker.replace_in_md(content, words_links))
