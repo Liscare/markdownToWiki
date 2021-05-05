@@ -4,7 +4,11 @@ import re
 
 import mdLinker
 import constant
+import cli
 
+
+def formatter_choice(choice_json):
+    return f'{choice_json["title"]} - {choice_json["description"]}'
 
 
 def fetch(search_query, indicator=False, code=constant.DEFAULT_LANGUAGE, limit=constant.DEFAULT_LIMIT):
@@ -27,8 +31,7 @@ def fetch(search_query, indicator=False, code=constant.DEFAULT_LANGUAGE, limit=c
 
     if response.status_code == 200:
         response_json = json.loads(response.text)
-        if len(response_json['pages']) == 1:
-            article_url += response_json['pages'][0]['key']
+        article_url += cli.choice(response_json['pages'], "Choose", formatter_choice)['key']
     name = f'{search_query} [{code.upper()}]' if indicator else search_query
     return {name: article_url}
 
