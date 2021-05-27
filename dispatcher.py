@@ -33,3 +33,10 @@ def init_wiki(args):
     :return: A dictionary of all arguments for WikiFetcher
     """
     return {"lang": args.lang[0], "limit": args.nb_resp[0]}
+
+
+def is_error_in_args(args):
+    limit = args.nb_resp[0]
+    if limit < 1 or limit > constant.MAX_LIMIT:
+        return f'The limit argument should be a positive integer and lower than {constant.MAX_LIMIT}, found: f{limit}'
+    return False
