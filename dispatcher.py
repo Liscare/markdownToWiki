@@ -2,6 +2,9 @@ import argparse
 import constant
 import json
 
+import wikiFetcher
+from cli import print_wiki_languages
+
 
 def init_args():
     """
@@ -14,6 +17,9 @@ def init_args():
                                                                                "Wikipedia links (will "
                                                                                "be overwritten for the "
                                                                                "result).")
+    parser.add_argument("-al", "--available-languages", action="store_true", dest="alang",
+                        help="Display all available languages in Wikipedia."
+                             "See https://wikistats.wmcloud.org/display.php?t=wp in the column named Wiki")
     parser.add_argument("-l", "--language", nargs=1, dest="lang", metavar="Language Code",
                         help="Default language for each Wikipedia query. See "
                              "https://wikistats.wmcloud.org/display.php?t=wp in the column named Wiki",
@@ -55,6 +61,13 @@ def is_error_in_args(args):
                '\"wiki_json.json\" manually or the the Python project named "List Wiki" ' \
                '(https://github.com/Liscare/listWiki).'
     return False
+
+
+def dispatch(args):
+    if args.alang:
+        print_wiki_languages()
+    else:
+        wikiFetcher.fetch_from_md(args.input[0], **init_wiki(args))
 
 
 def get_wiki_languages():
