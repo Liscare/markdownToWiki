@@ -1,5 +1,6 @@
 import argparse
 import constant
+import json
 
 
 def init_args():
@@ -36,7 +37,34 @@ def init_wiki(args):
 
 
 def is_error_in_args(args):
+    """
+    Check if all arguments given by the user are fine.
+
+    :param args: List of arguments
+    :return: False if there isn't error in all arguments, otherwise a message error as a str.
+    """
     limit = args.nb_resp[0]
+    lang = args.lang[0]
     if limit < 1 or limit > constant.MAX_LIMIT:
         return f'The limit argument should be a positive integer and lower than {constant.MAX_LIMIT}, found: f{limit}'
+    a = get_wiki_languages()
+    if lang not in a["wikis"]:
+        return 'The specified language is not matching with any Wikipedia.\nSee all latest available language on ' \
+               'https://wikistats.wmcloud.org/display.php?t=wp in the Wiki column.' \
+               'If the language is the website and not available with Wiki Fetcher, update the file named ' \
+               '\"wiki_json.json\" manually or the the Python project named "List Wiki" ' \
+               '(https://github.com/Liscare/listWiki).'
     return False
+
+
+def get_wiki_languages():
+    """
+    Get all available languages with Wikipedia
+
+    :return: A JSON object with an array (wikis) corresponding of all available languages on Wikipedia and the date
+    (date) when those data have been fetched.
+    """
+    with open("wiki_list.json", 'r') as f:
+        wiki_list = json.loads(f.read())
+    return wiki_list
+
