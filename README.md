@@ -27,4 +27,13 @@ between 5 possibility form the Spanish Wikipedia.
 
 Use `python3 main.py -h` for usage.
 
+### Available languages
+
+Available languages are determined by Wikipedia, a list is available [here](https://wikistats.wmcloud.org/display.php?t=wp).
+Thanks to the project named [listWiki](https://github.com/Liscare/listWiki), the list of available languages is stored in `wiki_list.json`. To print all
+languages (sorted by language name), use `python3 main.py bb -al`. 
+
+Some differences between the official list and the result of the command `python3 main.py bb -al` 
+can happen. In this case, you can contribute updating the JSON file.
+
 
