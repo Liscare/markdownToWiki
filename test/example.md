@@ -3,19 +3,19 @@
 ## Python
 
 Any of several Old World boa constrictors of the subfamily Pythoninae, 
-often growing to a length of more than 20 feet (6 meters): the Indian python, Python molurus, is endangered.
+often growing to a length of more than 20 feet (6 meters): the Indian python, Python [molurus](), is endangered.
 
 ### Danaus genutia 	
 
 Danaus genutia, the common tiger or striped tiger, is a species of brush-footed butterfly found in Sri Lanka, India, 
-Myanmar, south-eastern Asia and Australia. It prefers areas of moderate to heavy rainfall, and typical habitats include 
+Myanmar, south-eastern [Asia]() and [Australia](). It prefers areas of moderate to heavy rainfall, and typical habitats include 
 scrubby jungle, deciduous forests and fallow land near habitations. The insect sequesters toxins from plants, and 
 advertises its unpalatability by having prominent markings and striking colour patterns. This adult male common tiger,
 of the subspecies D. g. genutia, was photographed in Kerala, India.
 
 ### Timée [French]
 
-Le Timée (en grec ancien : Τίμαιος), l'un des derniers dialogues de Platon, est considéré depuis l'Antiquité comme 
+Le Timée (en grec ancien : Τίμαιος), l'un des derniers [dialogues]() de [Platon](), est considéré depuis l'Antiquité comme 
 l'œuvre capitale du philosophe. Rédigé sans doute vers 358 av. J.-C., à peu d’intervalle du Politique et du Philèbe, 
 mais avant Les Lois, comme le montrent les nombreuses analogies entre ces trois dialogues, le Timée devait composer une 
 trilogie avec le Critias et l'Hermocrate, mais rien de ce dernier dialogue ne nous est jamais parvenu. Cette trilogie 
@@ -24,7 +24,7 @@ avait pour projet de décrire les origines de l'univers, de l'homme et de la soc
 L'ouvrage présente une vaste cosmogonie fondée sur les données les plus certaines de la science, telle qu'elle se 
 développait au milieu du IVe siècle av. J.-C., dans un climat de curiosité intellectuelle et de partage incessant 
 du savoir. C'est un philosophe pythagoricien, probablement fictif, du nom de Timée de Locres, qui expose une réflexion
-sur l'origine de l’univers, la nature du monde physique et la formation de l'Âme du monde vues comme les œuvres d'un 
+sur l'origine de l’univers, la nature du monde [physique]() et la formation de l'Âme du monde vues comme les œuvres d'un 
 démiurge, tout en abordant les questions de la connaissance scientifique et de la place des mathématiques dans 
 l'explication du monde. Platon y développe une cosmologie dans laquelle prennent place les théories novatrices du 
 lieu, du Temps et des transformations mutuelles des éléments, expression de la puissante stimulation intellectuelle 
