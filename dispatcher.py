@@ -64,6 +64,11 @@ def is_error_in_args(args):
 
 
 def dispatch(args):
+    """
+    Dispatch according to arguments (print Wiki languages or normal use)
+    :param args: Arguments from CLI
+    :return: None
+    """
     if args.alang:
         print_wiki_languages()
     else:

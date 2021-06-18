@@ -8,6 +8,12 @@ import cli
 
 
 def formatter_choice(choice_json):
+    """
+    Format the choice like Title - Description
+    Example for the word "molurus": Python molurus - Species of snake
+    :param choice_json: A choice with title and description
+    :return: The formatted choice
+    """
     return f'{choice_json["title"]} - {choice_json["description"]}'
 
 
