@@ -10,6 +10,15 @@ def format_choice(choice):
     return choice
 
 
+def create_question(query):
+    """
+    Create the text for a question about a specific query
+    :param query:
+    :return: The text of a question
+    """
+    return f'Choose the Wikipedia article for {query}:'
+
+
 def choice(choices, question, formatter=format_choice):
     """
     Print a multi-choice with an user interaction.
