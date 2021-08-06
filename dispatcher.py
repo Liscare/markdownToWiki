@@ -3,7 +3,7 @@ import constant
 import json
 
 import wikiFetcher
-from cli import print_wiki_languages
+import cli
 
 
 def init_args():
@@ -70,7 +70,7 @@ def dispatch(args):
     :return: None
     """
     if args.alang:
-        print_wiki_languages()
+        cli.print_pretty_dict(get_wiki_languages()["wikis"])
     else:
         wikiFetcher.fetch_from_md(args.input[0], **init_wiki(args))
 

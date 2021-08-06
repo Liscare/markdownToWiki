@@ -1,6 +1,3 @@
-import dispatcher
-
-
 def format_choice(choice):
     """
     Default format for choice
@@ -38,14 +35,6 @@ def choice(choices, question, formatter=format_choice):
             print("You should give an integer. Try again...")
             continue
     return choices[answer]
-
-
-def print_wiki_languages():
-    """
-    Print all languages supported by Wiki.
-    :return: None
-    """
-    print_pretty_dict(dispatcher.get_wiki_languages()["wikis"])
 
 
 def print_pretty_dict(d):
