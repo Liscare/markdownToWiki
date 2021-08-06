@@ -70,7 +70,7 @@ def dispatch(args):
     :return: None
     """
     if args.alang:
-        cli.print_pretty_dict(get_wiki_languages()["wikis"])
+        print(cli.print_pretty_dict(get_wiki_languages()["wikis"]))
     else:
         wikiFetcher.fetch_from_md(args.input[0], **init_wiki(args))
 

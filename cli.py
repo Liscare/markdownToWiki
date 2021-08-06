@@ -39,12 +39,14 @@ def choice(choices, question, formatter=format_choice):
 
 def print_pretty_dict(d):
     """
-    Print a dictionary like a table in CLI. One line by key.
-    :param d: Dict to print
-    :return: None
+    Create a dictionary like a table in CLI. One line by key.
+    The first line (header) is Wikipedia Language Name
+    :param d: The dictionary
+    :return: A pretty dictionary for your CLI
     """
     d = dict(sorted(d.items(), key=lambda item: item[0]))
-    print("{:<10} {:<10}".format('Wikipedia', 'Language Name'))
+    pretty_dict = "{:<10} {:<10}\n".format('Wikipedia', 'Language Name')
 
     for key, value in d.items():
-        print("{:<10} {:<10}".format(key, value))
+        pretty_dict += "{:<10} {:<10}\n".format(key, value)
+    return pretty_dict
