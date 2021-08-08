@@ -52,7 +52,7 @@ def fetch_from_md(file_name, lang=constant.DEFAULT_LANGUAGE, limit=constant.DEFA
     :param limit: Number of response from Wikipedia for each search
     :param lang: Language code
     :param file_name: Name of your markdown file
-    :return: None
+    :return: Fetched words from Wikipedia as a dictionary (may have duplicate)
     """
 
     with open(file_name, 'r') as file:
@@ -63,3 +63,4 @@ def fetch_from_md(file_name, lang=constant.DEFAULT_LANGUAGE, limit=constant.DEFA
         words_links.update(fetch(word, code=lang, limit=limit))
     with open(file_name, 'w') as file_w:
         file_w.write(mdLinker.replace_in_md(content, words_links))
+    return words

@@ -72,7 +72,8 @@ def dispatch(args):
     if args.alang:
         print(cli.print_pretty_dict(get_wiki_languages()["wikis"]))
     else:
-        wikiFetcher.fetch_from_md(args.input[0], **init_wiki(args))
+        fetched_words = wikiFetcher.fetch_from_md(args.input[0], **init_wiki(args))
+        print(f'In total, {len(fetched_words)} words have been detected in your file.')
 
 
 def get_wiki_languages():
