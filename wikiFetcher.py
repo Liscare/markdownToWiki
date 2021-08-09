@@ -38,6 +38,8 @@ def fetch(search_query, indicator=False, code=constant.DEFAULT_LANGUAGE, limit=c
     if response.status_code == 200:
         response_json = json.loads(response.text)
         article_url += cli.choice(response_json['pages'], cli.create_question(search_query), formatter_choice)['key']
+    else:
+        print("The API of Wikimedia.org is not responding. Try later.")
     name = f'{search_query} [{code.upper()}]' if indicator else search_query
     return {name: article_url}
 
