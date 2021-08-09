@@ -34,6 +34,7 @@ def choice(choices, question, formatter=format_choice):
         except ValueError:
             print("You should give an integer. Try again...")
             continue
+    print(f'You choose : [{answer}] {formatter(choices[answer])}')
     return choices[answer]
 
 
