@@ -35,10 +35,10 @@ def choice(choices, question, formatter=format_choice):
         while 0 > answer or answer > len(choices):
             try:
                 answer = int(input())
-                print(f'You choose : [{answer}] {formatter(choices[answer])}')
             except ValueError:
                 print("You should give an integer. Try again...")
                 continue
+        print(f'You choose: [{answer}] {formatter(choices[answer])}')
     return choices[answer]
 
 
