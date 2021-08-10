@@ -11,9 +11,12 @@ def formatter_choice(choice_json):
     """
     Format the choice like Title - Description
     Example for the word "molurus": Python molurus - Species of snake
+    If the description is empty, print (No description available) in the description field
     :param choice_json: A choice with title and description
     :return: The formatted choice
     """
+    if choice_json["description"] is None:
+        return f'{choice_json["title"]} - (No description available)'
     return f'{choice_json["title"]} - {choice_json["description"]}'
 
 
