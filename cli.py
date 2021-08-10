@@ -13,28 +13,32 @@ def create_question(query):
     :param query:
     :return: The text of a question
     """
-    return f'Choose the Wikipedia article for {query}:'
+    return f'Choose the Wikipedia article for \"{query}\":'
 
 
 def choice(choices, question, formatter=format_choice):
     """
     Print a multi-choice with an user interaction.
     :param choices: List of possible choice
-    :param question: Question to ask, print at the beginning
+    :param question: Question to ask, printed at the beginning
     :param formatter: Function to format each possible choice
     :return: The user choice
     """
     print(question)
-    for num in range(len(choices)):
-        print(f'[{num}] {formatter(choices[num])}')
-    answer = -1
-    while 0 > answer or answer > len(choices):
-        try:
-            answer = int(input())
-        except ValueError:
-            print("You should give an integer. Try again...")
-            continue
-    print(f'You choose : [{answer}] {formatter(choices[answer])}')
+    if len(choices) == 1:  # Auto choice
+        answer = 0
+        print(f'This link will be filled by the following article: {formatter(choices[answer])}')
+    else:  # Manual choice
+        for num in range(len(choices)):
+            print(f'[{num}] {formatter(choices[num])}')
+        answer = -1
+        while 0 > answer or answer > len(choices):
+            try:
+                answer = int(input())
+                print(f'You choose : [{answer}] {formatter(choices[answer])}')
+            except ValueError:
+                print("You should give an integer. Try again...")
+                continue
     return choices[answer]
 
 
