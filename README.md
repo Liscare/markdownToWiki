@@ -1,5 +1,5 @@
-![Lint with flake8](https://github.com/Liscare/markdownToWiki/actions/workflows/lint.yml/badge.svg)
-![Tests Python 3.7 | 3.8 | 3.9](https://github.com/Liscare/markdownToWiki/actions/workflows/tests.yml/badge.svg)
+[![flake8](https://github.com/Liscare/markdownToWiki/actions/workflows/lint.yml/badge.svg)](https://github.com/Liscare/markdownToWiki/actions/workflows/lint.yml)
+[![Pytest](https://github.com/Liscare/markdownToWiki/actions/workflows/tests.yml/badge.svg)](https://github.com/Liscare/markdownToWiki/actions/workflows/tests.yml)
 ![Last commit](https://github.com/Liscare/markdownToWiki/commit/master)
 
 # Introduction
