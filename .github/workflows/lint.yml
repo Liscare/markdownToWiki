@@ -5,7 +5,7 @@ name: flake8
 
 on:
   push:
-    branches: [ main, tests_actions ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
