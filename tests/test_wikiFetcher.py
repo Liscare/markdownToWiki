@@ -12,4 +12,3 @@ class TestWikiFetcher:
             with open("./tests/resources/test_1.md", 'w') as f:
                 f.write(file_tmp)
             assert expected_result.sort() == result.sort()
-

@@ -86,4 +86,3 @@ def get_wiki_languages():
     with open("wiki_list.json", 'r') as f:
         wiki_list = json.loads(f.read())
     return wiki_list
-
