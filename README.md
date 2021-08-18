@@ -1,4 +1,6 @@
-![Tests Python 3.7](https://github.com/Liscare/markdownToWiki/actions/workflows/main.yml/badge.svg)
+![Lint with flake8](https://github.com/Liscare/markdownToWiki/actions/workflows/lint.yml/badge.svg)
+![Tests Python 3.7 | 3.8 | 3.9](https://github.com/Liscare/markdownToWiki/actions/workflows/tests.yml/badge.svg)
+![Last commit](https://github.com/Liscare/markdownToWiki/commit/master)
 
 # Introduction
 Simple script inserting Wikipedia links in your markdown document
