@@ -1,3 +1,5 @@
+![Tests Python 3.7](https://github.com/Liscare/markdownToWiki/actions/workflows/main.yml/badge.svg)
+
 # Introduction
 Simple script inserting Wikipedia links in your markdown document
 
